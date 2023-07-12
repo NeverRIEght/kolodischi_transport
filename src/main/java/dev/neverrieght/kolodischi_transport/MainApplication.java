@@ -3,11 +3,12 @@ package dev.neverrieght.kolodischi_transport;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.*;
-import org.w3c.dom.html.HTMLLinkElement;
 
 import java.io.IOException;
 import java.util.*;
@@ -41,16 +42,15 @@ public class MainApplication extends Application {
             System.out.println(routeNumber.get(0).getTextContent().trim());
 
             for (HtmlTableDataCell td : timesList) {
-                System.out.print(td.getTextContent().trim());
+                System.out.print(td.getTextContent().trim() + "\n");
             }
-//            /html/body/div[1]/div[2]/div/div[1]/div/div/div[1]/div/ul/li[1]/a/i
-//            System.out.println(page.getTitleText());
+
 
         } catch (FailingHttpStatusCodeException | IOException e) {
             e.printStackTrace();
         }
 
-
+        Button btn = new Button("clickme");
         stage.show();
 
 
